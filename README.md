@@ -60,3 +60,12 @@ server {
 sudo ln -s /etc/nginx/sites-available/timestampapi /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
+
+
+## Useful Debug Commands
+sudo journalctl -u timestampapi.service --no-pager -n 50
+sudo ufw status
+sudo ufw allow from 127.0.0.1 to any port 5000
+sudo chown -R $USER:$USER /home/username/myapi
+sudo chmod 755 /home/username/myapi
+sudo chmod +x /home/username/myapi/*.dll
